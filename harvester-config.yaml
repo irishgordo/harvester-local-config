@@ -1,0 +1,35 @@
+token: testtesttest
+os:
+  ssh_authorized_keys:
+    - github:irishgordo
+  hostname: harveytheharvester
+  modules:
+    - kvm
+  dns_nameservers:
+    - 192.168.1.251
+  ntp_servers:
+    - 0.us.pool.ntp.org
+    - 1.us.pool.ntp.org
+  password: rancher
+  labels:
+    purpose: testing
+install:
+  mode: create
+  networks:
+    harvester-mgmt:
+      interfaces:
+      - name: eno1
+      method: dhcp
+  force_efi: true
+  device: /dev/sda
+  silent: false
+  poweroff: false
+  no_format: false
+  debug: true
+  tty: ttyS0
+  vip_hw_addr: 0c:c4:7a:35:08:a0
+  vip_mode: dhcp
+  force_mbr: false
+  no_data_partition: false
+system_settings:
+  auto-disk-provision-paths: ""
